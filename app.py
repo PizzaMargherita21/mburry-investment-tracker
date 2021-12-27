@@ -121,7 +121,7 @@ if choice == "Burry Style Analysis":
     startDate = st.date_input('Start Date', datetime(2019, 1, 1))
     endDate = st.date_input('End Date')
     
-    data = pdr.get_data_yahoo(ticker[0]+'.T', startDate,endDate)['Adj Close']
+    data = pdr.get_data_yahoo(tickerList[0]+'.T', startDate,endDate)['Adj Close']
     priceChart = px.line(data, x=data.index, y='Adj Close')
     priceChart.update_layout(
         title="Daily (Closing) Price Chart",
