@@ -42,7 +42,7 @@ elif getTickerOptions == 'Multi Ticker Check via CSV upload':
         colnames=['Ticker','Name','Asset Class','Weight (%)','Price','Shares','Market Value','Notional Value','Sector','SEDOL','ISIN','Location','Currency','Market Currency','FX Rate'] 
         tickerlist=pd.read_csv(uploaded_file, sep=',',skiprows=10,skipfooter=2, names=colnames, header=None)
         tickerList = tickerlist[['Ticker','Name']]
-        tickerList = tickerList['Ticker']
+        tickerList = tickerList['Ticker'][1190:1192]
     
     except:
         st.warning('Please upload a csv file')
